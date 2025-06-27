@@ -20,21 +20,13 @@ if __name__=="__main__":
     # Classifier
     classifier = MLPClassifier()
 
-    # create parameter grid for cross_validation search
-    # param_grid = {
-    #     "random_state": [901],
-    #     "activation":['identity', 'logistic', 'tanh', 'relu'],
-    #     "solver":['lbfgs','sgd', 'adam'],
-    #     "learning_rate":['adaptive'],
-    #     "max_iter":[10000, 50000, 100000],
-    #     "early_stopping": [True]
-    # }
+    # Hyperperameter grid
     param_grid = {
         "random_state": [901],
         "activation":['identity', 'logistic', 'tanh', 'relu'],
-        "solver":['adam'],
+        "solver":['lbfgs','sgd','adam'],
         "learning_rate":['adaptive'],
-        "max_iter":[50000],
+        "max_iter":[100000],
         "early_stopping": [True]
     }
 
