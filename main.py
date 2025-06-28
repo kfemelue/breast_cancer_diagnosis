@@ -23,7 +23,7 @@ if __name__=="__main__":
     # Classifier
     classifier = MLPClassifier()
 
-    # Hyperperameter grid, using "kitchen sink" apprach to find a high scoring combination of hyperparameters
+    # Hyperperameter grid, using "kitchen sink" approach to find a high scoring combination of hyperparameters
     param_grid = {
         "random_state": [random],
         "activation":['identity', 'logistic', 'tanh', 'relu'],
