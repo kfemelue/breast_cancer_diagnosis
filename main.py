@@ -10,7 +10,7 @@ from sklearn.preprocessing import StandardScaler
 
 
 if __name__=="__main__":
-    random = 100
+    random = 901
     cells = load_breast_cancer()
     X = cells.data
     y = cells.target
@@ -23,16 +23,17 @@ if __name__=="__main__":
     # Classifier
     classifier = MLPClassifier()
 
-    # Hyperperameter grid
+    # Hyperperameter grid, using "kitchen sink" apprach to find a high scoring combination of hyperparameters
     param_grid = {
         "random_state": [random],
         "activation":['identity', 'logistic', 'tanh', 'relu'],
         "solver":['lbfgs','sgd','adam'],
-        "learning_rate":['adaptive'],
-        "max_iter":[1000000],
+        "learning_rate":['constant','invscaling','adaptive'],
+        "max_iter":[100000000],
         "early_stopping": [True]
     }
 
+    # cv layers in search set at default of 5
     hyper_parameter_search = GridSearchCV(classifier, param_grid, refit=True)
     pipe = make_pipeline(StandardScaler(), hyper_parameter_search)
     
@@ -42,4 +43,3 @@ if __name__=="__main__":
 
     report = classification_report(y_test, y_predictions, target_names=cells.target_names)
     print(report)
-    
