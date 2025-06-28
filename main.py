@@ -42,3 +42,4 @@ if __name__=="__main__":
 
     report = classification_report(y_test, y_predictions, target_names=cells.target_names)
     print(report)
+    
