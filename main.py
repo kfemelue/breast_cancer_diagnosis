@@ -34,7 +34,7 @@ if __name__=="__main__":
     }
 
     # cv layers in search set at default of 5
-    hyper_parameter_search = GridSearchCV(classifier, param_grid, refit=True, scoring='f1')
+    hyper_parameter_search = GridSearchCV(classifier, param_grid, refit=True, scoring='f1', verbose=True)
     pipe = make_pipeline(StandardScaler(), hyper_parameter_search)
     
     pipe.fit(X_train, y_train)
