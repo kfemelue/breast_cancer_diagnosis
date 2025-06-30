@@ -12,6 +12,7 @@ The project uses the [scikit-learn breast cancer dataset](https://scikit-learn.o
 ## Limitations
 Source dataset only consists of 569 samples (212 malignant cells, 357 Benign cells), and a large dimensionality of 30.
 The approach can be refined by selecting most relevant dimensions to train the classifier model, and by training on a larger more balanced dataset.
+Currently all provided dimensions are used as features, but feature selection can be refined.
 
 The "kitchen sink" GridSearch will take considerably longer with a larger dataset.
 
