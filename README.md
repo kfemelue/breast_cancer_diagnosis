@@ -20,7 +20,7 @@ The "kitchen sink" GridSearch will take considerably longer with a larger datase
 ### Feature Selection
 
 #### Correlation of dimensions to target and one another
-![image]('./correlation.jpeg')
+![image](correlation.png)
 
 
 
