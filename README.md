@@ -30,8 +30,8 @@ The "kitchen sink" GridSearch will take considerably longer with a larger datase
 The breast cancer dataset is split into 60% training data and 40% testing data
 Data is then standardized using the StandardScaler library and GridSearchCV is used to find the best combination of hyperparameters for the Scikit-learn MLP classifier in a "kitchen sink" approach to finding the model that produces the best f1 score.
 
-## Hyperparameters
-
+### Hyperparameters
+Grid search will check various combinations of activations, solvers, learning_rates
 ```
         param_grid = {
         "activation":['identity', 'logistic', 'tanh', 'relu'],
